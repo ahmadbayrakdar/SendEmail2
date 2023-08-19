@@ -1,0 +1,41 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/syles.css">
+  <title>
+      @Model.Value("title")
+  </title>
+</head>
+<body>
+    <section>
+      <header>
+        <h2>
+            @Model.Value("title")
+        </h2>
+      </header>
+      <main>
+          <div class="info_section">
+              @Model.Value("info")
+          </div>
+          
+          <!-- code goes here -->
+          
+          @RenderBody()
+          
+          <!-- *** -->
+          
+      </main>
+    </section>
+  <footer>
+    @Model.Value("credit")
+  </footer>
+</body>
+</html>

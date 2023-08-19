@@ -1,0 +1,23 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.FormPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using SendEmail2.Controllers
+@{
+	Layout = "BasePage.cshtml";
+}
+
+@using(Html.BeginUmbracoForm("Submit", "Form")){
+    <div>
+        <label for="Name">Your Name</label>
+        <input name="Name" asp-for="UserName">
+    </div>
+    <div>
+        <label for="Email">Your Email</label>
+        <input name="Email" asp-for="Email">
+    </div>
+    <div>
+        <label for="Message">Your Message</label>
+        <textarea name="Message" asp-for="Message" class="email_content"></textarea>
+    </div>
+     <button type="submit" class="button_send_email">Send Email</button>
+}
